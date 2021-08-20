@@ -1,0 +1,8 @@
+{
+  "name": "servic",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

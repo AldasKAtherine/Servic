@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/explorar"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Categorías</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-item *ngFor="let item of items|async">
+            <ion-card style="background-color:{{item.color}}">
+                <img src="{{item.imagen}}" />
+                <div class="card-title" [routerLink]="['/categoria',valor]"><input id={{item.id}} type="button" value="{{item.nombre}}" (click)="Parametro($event.target.id)"></div>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+</ion-content>

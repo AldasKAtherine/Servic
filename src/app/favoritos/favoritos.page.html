@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title style="text-align: center;" >Servicios favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor = "let favorito of (favoritos| async)?.servicios_favoritos ">
+        <app-tarjeta-servicio  [servicio]="favorito" [routerLink]="['/servicio', favorito.id_servicio]"> </app-tarjeta-servicio>     
+        <ion-icon (click)="desmarcar(favorito.id_servicio)" name="bookmark"></ion-icon>
+    </div>
+
+    <div style="margin-top: 4em;">
+      <div style="text-align: center;" *ngIf="(favoritos| async)?.servicios_favoritos.length == 0">
+        <img style="width: 30%;" src="./assets/caja-vacia.png" alt="" srcset="">
+        <p>
+          <strong>Sin Servicios favoritos</strong>
+        </p>
+      </div>
+    </div>
+</ion-content>

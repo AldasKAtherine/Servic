@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/explorar" icon="close-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Filtros</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <p style="text-align: center; font-size: 20px;">Categoría</p>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Todas</ion-button>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Construcción</ion-button>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Reparación</ion-button>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Música</ion-button>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Legal</ion-button>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Educación</ion-button>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Agricultura</ion-button>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Electrónica</ion-button>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div>
+                    <ion-button size="small">Jardinería</ion-button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <p style="text-align: center; font-size: 20px;">Distancia</p>
+    <ion-item>
+        <ion-range min="0" max="100" pin color="primary">
+            <p slot="start">0</p>
+            <p slot="end">100</p>
+        </ion-range>
+    </ion-item>
+    <p style="text-align: center; font-size: 20px;">Calificación</p>
+
+    <div style="padding: '1em'">
+        <app-calificacion></app-calificacion>
+    </div>
+
+
+    <div id="contratar">
+        <p class="limpiar" onclick="alert('hola')">Limpiar</p>
+        <div class="vl"></div>
+        <p class="aplicar" onclick="alert('aplicar')">Aplicar</p>
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,99 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)" [fullscreen]="true">
+  <ion-header slot="fixed">
+    <ion-toolbar [class.show-background]="showToolbar">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/explorar"></ion-back-button>
+      </ion-buttons>
+      <ion-title><strong>{{(servicio | async)?.titulo}}</strong>
+      </ion-title>
+      <ion-buttons *ngIf="(favoritos | async); else sinFav" slot="secondary">
+        <ion-button (click)="agregarFavorito()" *ngIf="!esFavorito(favoritos | async)">
+          <ion-icon name="bookmark-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="eliminarFavorito()" *ngIf="esFavorito(favoritos | async)">
+          <ion-icon class="favorito" name="bookmark"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ng-template #sinFav>
+        <ion-buttons slot="secondary" >
+          <ion-button  (click)="agregarFavorito()" *ngIf="!esFavorito(favoritos | async)">
+            <ion-icon name="bookmark-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ng-template>
+    </ion-toolbar>
+  </ion-header>
+
+  <div [ngStyle]="{ 
+    background: 'linear-gradient(rgba(34, 36, 85, 0.4), rgba(34, 36, 85, 0.4)), 
+    url('+ (servicio | async)?.imagen + ')' ,
+    'background-size': 'cover'
+  }" class="foto">
+    <ion-badge class="cat" [ngStyle]="{
+      'background-color': (servicio | async)?.categoria.color
+    }">{{(servicio | async)?.categoria.nombre}}</ion-badge>
+    <ion-badge class="estrella">
+      <ion-icon name="star"></ion-icon> {{(servicio | async)?.calificacion}}
+    </ion-badge>
+  </div>
+  <div style="padding: 1em;">
+    <div style="text-align: right;">
+      <ion-badge class="precio">${{(servicio | async)?.precio}}/{{(servicio | async)?.tipo_cobro}}</ion-badge>
+    </div>
+    <p style="margin: 0;">{{(servicio | async)?.descripcion}}</p>
+    <h4 class="bold">Ofertante</h4>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img *ngIf="(usuario | async) != null; else fotoD" [src]="(usuario | async)?.imagen_perfil">
+        <ng-template #fotoD>
+          <img
+            src="https://st.depositphotos.com/1757583/3034/i/450/depositphotos_30349377-stock-photo-black-background.jpg"
+            alt="" srcset="">
+        </ng-template>
+      </ion-avatar>
+      <ion-label>
+        <p class="bold texto">
+          {{(usuario | async)?.nombre}}
+        </p>
+        <p class="texto">{{(usuario | async)?.biografia}}</p>
+      </ion-label>
+
+    </ion-item>
+
+    <ion-progress-bar id="con_pro" value="0.8"></ion-progress-bar>
+    <div style="text-align: right;">
+      <strong
+        style="background-color: #222455; color: white;padding: 0.2em 0.3em; border-radius: 0.3em;">Confiable</strong>
+    </div>
+    <h4 class="bold">Resenas</h4>
+
+    <ion-item *ngFor="let resena of (servicio | async)?.ultimas_resenas" lines="none">
+      <ion-avatar slot="start">
+        <img [src]="resena.usruario.imagen_perfil">
+      </ion-avatar>
+      <ion-label>
+        <p class="bold texto">
+          {{resena.usruario.nombre}}
+        </p>
+        <p class="texto">{{resena.comentario}}</p>
+      </ion-label>
+      <ion-badge class="estrellaR">
+        <ion-icon name="bookmark"></ion-icon>
+        <ion-icon name="star"></ion-icon> 4
+      </ion-badge>
+    </ion-item>
+    
+  </div>
+
+  <div style="text-align: center;" *ngIf="(servicio | async)?.ultimas_resenas.length == 0">
+    <img style="width: 30%;" src="./assets/caja-vacia.png" alt="" srcset="">
+    <p>Sin Reseñas</p>
+  </div>
+
+  <div style="height: 100px;"></div>
+  <div (click)="contratarServicio()" id="contratar">
+    Contratar servicio
+  </div>
+
+</ion-content>

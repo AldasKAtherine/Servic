@@ -1,0 +1,51 @@
+[{
+        "categoria": "Electricísta",
+        "precio": 7,
+        "imagen": "https://www.senati.edu.pe/sites/default/files/2017/carrera/11/carrera-dual-electricista-industrial-senati-1800x1190.jpg",
+        "linea": "Maestro electricista",
+        "subcategoria": "Instalaciones",
+        "descripcion": "Varios años de experirencia en el campo..",
+        "calificacion": 4.7
+
+    },
+    {
+        "categoria": "Música",
+        "precio": 9,
+        "imagen": "https://i.ytimg.com/vi/jSoiUIB6bRY/maxresdefault.jpg",
+        "linea": "Electromecanico",
+        "subcategoria": "Instalaciones",
+        "descripcion": "Ingeniero gradudado y 2 años experiencia..",
+        "calificacion": 4.7
+
+    },
+    {
+        "categoria": "Electricista",
+        "precio": 8.5,
+        "imagen": "https://dnb2eg0emsxdz.cloudfront.net/cdn/13/images/curso-online-electricista_l_secundaria_1_1521558308.jpg",
+        "linea": "Electricista",
+        "subcategoria": "Instalaciones",
+        "descripcion": "Soluciono problemas electricos con efici..",
+        "calificacion": 4.7
+
+    },
+    {
+        "categoria": "Electricista",
+        "precio": 7,
+        "imagen": "https://previews.123rf.com/images/kadmy/kadmy1604/kadmy160400225/55593236-constructor-electricista-en-el-trabajo-de-instalar-energ%C3%ADa-metros-ahorro-en-l%C3%ADnea-el%C3%A9ctrica-fuseboard-dist.jpg",
+        "linea": "Electromecanico",
+        "subcategoria": "Instalaciones",
+        "descripcion": "Amplia experiencia en este tipo de trab..",
+        "calificacion": 4.7
+
+    },
+    {
+        "categoria": "Fontanero",
+        "precio": 9,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Plumber_at_work.jpg",
+        "linea": "Maestro plomero",
+        "subcategoria": "Instalaciones",
+        "descripcion": "Varios años de experirencia en el campo..",
+        "calificacion": 7
+
+    }
+]

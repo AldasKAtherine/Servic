@@ -1,0 +1,50 @@
+ion-content {
+    background-image: url('../../assets/fondo_inicio.jpg');
+  background-size: cover;
+  background-position: center center;
+  --background: none;
+}
+#img1{
+    width: 70%;
+    height: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 6vh 0;
+}
+#contInput{    
+   padding: 10% 0;
+
+ }
+#inputVal{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 90%;
+    color: white;
+    background-color: #495a73;
+    border-radius: 1vh;
+    height: 7vh;
+   
+}
+
+#contBoton{
+    height: 10%;
+    margin: 18vh 0vh 0vh 0vh;
+}
+
+p{
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+#buttonVal{
+    background-color: #5663ff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#contLog{
+    text-align: center;
+}

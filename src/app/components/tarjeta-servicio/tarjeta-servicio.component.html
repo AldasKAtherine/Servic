@@ -1,0 +1,21 @@
+<ion-card style="text-align: start;">
+  <ion-badge class="precio">${{servicio.precio}}/{{servicio.tipo_cobro}}</ion-badge>
+  <ion-badge class="estrella">
+    <ion-icon name="star"></ion-icon> {{servicio.calificacion}}
+  </ion-badge>
+  <img [src]="servicio.imagen" />
+  <ion-card-header>
+    <div>
+      <ion-card-title [ngClass]="{'texto_pequeno' : !mostrarCategoria, 'una_linea': mostrarCategoria}" class="una_linea">{{servicio.titulo}}</ion-card-title>
+
+      <div *ngIf="mostrarCategoria">
+        <ion-badge  [style.background-color]="servicio.categoria.color" class="categoria">{{servicio.categoria.nombre}}</ion-badge>
+      </div>
+     
+    </div>
+    
+    <ion-card-subtitle class="una_linea">{{servicio.descripcion}}</ion-card-subtitle>
+  </ion-card-header>
+
+
+</ion-card>

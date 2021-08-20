@@ -1,0 +1,62 @@
+ion-card {
+    border-radius: 0.7em;
+    box-shadow: 0 9px 80px rgba(0, 0, 0, 0.12);
+    font-weight: bold;
+}
+
+ion-card-title {
+    color: #3E3F68;
+    max-lines: 1;
+}
+
+ion-card-subtitle {
+    color: #8A98BA;
+    max-lines: 1;
+    margin-top: 0;
+}
+
+ion-card-header {
+    padding-top: 0.5em;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 12em;
+}
+
+.una_linea {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+ion-badge {
+    position: absolute;
+    top: 1em;
+    background-color: white;
+}
+
+.precio {
+    left: 1em;
+    color: #4CD964;
+}
+
+.estrella {
+    right: 1em;
+    color: #222455;
+}
+
+.estrella ion-icon {
+    color: #FFCC00;
+}
+
+.categoria {
+    background-color: #FF5673;
+    font-size: 0.7em;
+    top: 1em;
+    right: 1.5em;
+}

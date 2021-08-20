@@ -1,0 +1,55 @@
+ion-button {
+    --background: #ffffff;
+    --color: #cccccc;
+    min-width: 100%;
+}
+
+ion-button:hover {
+    --background: #ffae8b;
+    --color: #ffffff;
+}
+
+#contratar {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    z-index: 100;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+    background-color: #5663ff;
+    color: white;
+    font-size: 1.3em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.limpiar {
+    flex: 1;
+    text-align: center;
+    top: 10px;
+    margin: 15px;
+}
+
+.aplicar {
+    flex: 1;
+    text-align: center;
+    top: 10px;
+    margin: 15px;
+}
+
+.vl {
+    flex: 1;
+    border-left: 1px solid white;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+ion-button {
+    max-width: 30px;
+}

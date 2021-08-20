@@ -1,0 +1,22 @@
+{
+    "id": "4556",
+    "titulo": "Maestro plomero",
+    "descripcion": "Gra servicio y excelente persona",
+    "categoria": "contruccion",
+    "precio": 7,
+    "tipo_cobro": "hora",
+    "imagen": "https://hola.com/perro.jpg",
+    "usuario_id": "h77uh8gttn@",
+    "punto_geografico": {
+        "lat": 102334,
+        "lng": -10280
+    },
+    "calificacion": 4.5,
+    "numero_solicitudes": 20,
+    "ultimas_resenas": [
+        {
+            "comentario": "Un gran amigo",
+            "fecha": "20/12/2020"
+        }
+    ]
+}

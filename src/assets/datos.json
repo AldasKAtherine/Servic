@@ -1,0 +1,37 @@
+[{
+        "imagen": "../../assets/imgCategoria/agricultor.jpg",
+        "categoria": "Agricultor"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/carpintero.jpg",
+        "categoria": "Música"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/chofer.jpg",
+        "categoria": "Chofer"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/cocinero.jpg",
+        "categoria": "Cocinero"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/electricista.png",
+        "categoria": "Electricísta"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/fontanero.jpg",
+        "categoria": "Fontanero"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/mecanico.jpg",
+        "categoria": "Mecánico"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/pintor.jpg",
+        "categoria": "Pintor"
+    },
+    {
+        "imagen": "../../assets/imgCategoria/psicologo.jpg",
+        "categoria": "Psicólogo"
+    }
+]

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Perfil</ion-title>
+    <ion-buttons slot="secondary" >
+      <ion-button (click)="salir()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img class="imgPerfil" src="{{(usuario|async)?.imagen_perfil}}"></ion-img>
+  <p class="padin"><span class="cerca">{{(usuario|async)?.nombre}}</span></p>
+  <p class="padin"><span class="lejos">{{(usuario|async)?.email}}</span></p>
+  <div class="div1">
+    <div class="descripcion">{{(usuario|async)?.biografia}}</div>
+  </div>
+  <div style="padding: 1em 0em;">
+    <div><div class="numeros">{{(usuario|async)?.numero_resenas}}</div>
+      <div class="numeros">{{(usuario|async)?.numero_contrat}}</div></div>
+    <div><div class="comentarios">Comentarios</div><div class="comentarios">Contratos</div></div>
+  </div>
+  <div *ngFor="let servicio of servicios | async">
+    <app-tarjeta-servicio  [servicio]="servicio" [routerLink]="['/servicio']"> </app-tarjeta-servicio>
+  </div>
+  
+
+</ion-content>

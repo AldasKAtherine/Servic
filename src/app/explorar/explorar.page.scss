@@ -1,0 +1,95 @@
+
+.padin{
+  padding: 0.6em 0.8em;
+}
+span.cerca {
+    font-size: 5vw;
+    font-weight: bold;
+}
+span.cantidad {
+  font-size: 4vw;
+    color: rgb(179, 179, 171);
+}
+
+.contenedor_cantidad{
+  float: right;
+}
+span.cantidad2 {
+  padding-left: 45vw;
+   font-size: 3vw;
+     color: rgb(179, 179, 171);
+ }
+ span.cantidad3 {
+  padding-left: 33vw;
+   font-size: 3vw;
+     color: rgb(179, 179, 171);
+ }
+
+#icono_filtrar{
+  font-size: 7vw;
+  position: absolute;
+    z-index: 1000;
+    right: 8vw;
+    top: 5vw;
+}
+
+span{
+    padding-top: 1vw!important;
+    padding-bottom: 1vw!important;
+    width: 120vw!important;
+    height: 30vw!important;
+  
+  }
+  ion-slide:hover{
+    cursor: pointer;
+  
+  }
+  span img{
+    width: 55vw;
+    height: 25vw;
+    mix-blend-mode: multiply;
+  }
+
+  ion-slide.iom {
+    width: 95vw!important;
+    height: 30vw!important;
+    background-color:  #FFF;
+    float: left;
+    margin-left: 1.5vw!important;
+    margin-right: 1.5vw!important;
+    border-radius: 50vw!important;
+    
+  }
+  .centrado{
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    font-size: 3.5vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.searchbar-input {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+ion-card {
+ 
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 55vw;
+  height: 25vw;
+}
+
+
+ais-stats{
+  display: inline-block;
+    opacity: 0.6;
+}
+
+#ver_mas1{
+  font-size: 3vw !important;
+  color: #b3b3ab !important;
+}
+

@@ -1,0 +1,121 @@
+#barra {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding: 2vh 0;
+}
+
+.btnEstilo {
+    display: inline-block;
+    width: 25%;
+    font-weight: 600;
+    background-color: #ffffff;
+}
+
+#tlPublicar {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    font-size: 1em;
+    color: #3e406b;
+    font-weight: bold;
+}
+
+#btnCancelar {
+    color: #878bff;
+    text-align: left;
+}
+
+#btnEnviar {
+    color: #878bff;
+    text-align: right;
+}
+
+#btnEnviar2 {
+    color: #cccccc;
+    text-align: right;
+}
+
+#cargar {
+    width: 90%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #eaf2fa;
+    border-radius: 1vh;
+}
+
+#camara {
+    color: #8a8eaa;
+    width: 30%;
+    height: 50%;
+    padding: 1%;
+}
+
+img {
+    color: #8a8eaa;
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    margin: 0;
+    color: #8a8daa;
+    font-weight: 700;
+}
+
+#datos {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#datos p {
+    color: #42446e;
+    margin: 4% 0 3% 0;
+}
+
+.entradas {
+    border: solid 1px #e3e6ee;
+    border-radius: 1vh;
+}
+
+.catNom {
+    color: #dbdbe3;
+    display: inline-block;
+    border: solid 1px #e3e6ee;
+    border-radius: 1vh;
+    padding: 0.5vh 1vh;
+    margin: 0 0.5vh;
+}
+
+#precio1 {
+    background-color: #f6f7ff;
+    color: #b9c1d6;
+    padding: 2vh 4vh;
+    margin: 2vh 0;
+    height: 7%;
+}
+
+#contPre {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1vh 0;
+}
+
+#contRadio {
+    margin: 5% 0;
+    text-align: center;
+}
+
+.rdEstilo {
+    padding: 1vh;
+    margin: 1vh;
+    font-weight: 700;
+}

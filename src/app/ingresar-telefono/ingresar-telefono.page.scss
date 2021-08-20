@@ -1,0 +1,64 @@
+//--background: url(../../assets/fondo_inicio.jpg) no-repeat;
+ion-content {
+    --background: none;
+    background-image: url('../../assets/fondo_inicio.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .no-scroll .scroll-content{
+      overflow: hidden;
+  }
+  .imagenInicio {
+    height: 40%;
+    width: 70%;
+    margin-left: 15%;
+    }
+    ion-input{
+        border-radius: 10px !important;
+        margin-left: 10%;
+        font-size: 1em;
+        background-color: #495a73;
+        /* height: 10%; */
+        /* width: 41%; */
+        max-width: 70%; // this is applying perfectly
+        max-height: 100%;
+        color: white;
+    }
+    ion-item{
+        max-width: 80%; // this is applying perfectly
+        max-height: 100%;
+        margin-left: 10%;
+        --background: #495a73;;
+        border-radius: 10px !important;
+        
+    }
+
+ .center{
+    text-align: center;
+    position: relative;
+    top: 5rem; 
+    height: 17vw;
+    
+}
+.center2{
+    text-align: center;
+    position: relative;
+    top: 6rem;    
+}
+.botonSiguiente{ 
+    margin-left: 10%;
+    margin-right: 10%;
+}
+a{
+    text-decoration: none;
+}
+.capch{
+    margin: 15px auto !important;
+      width: auto !important;
+      height: auto !important;
+      text-align: -webkit-center;
+      text-align: -moz-center;
+      text-align: -o-center;
+      text-align: -ms-center;
+  }

@@ -1,0 +1,88 @@
+.padding{
+    padding:16px;
+}
+
+.margin{
+    margin:16px;
+}
+.bold{
+    font-weight: bold;
+}
+
+.texto{
+    color: #222455;    
+}
+
+.foto{
+    background-image: linear-gradient(rgba(34, 36, 85, 0.4), rgba(34, 36, 85, 0.4));
+    background-size: cover !important;
+    border-radius:1em !important;
+    height: 200px;
+}
+
+.cat{
+    margin-top: 155px;
+    margin-left: 1em;
+}
+.estrella{
+    margin-top: 155px;
+    margin-left: 2em;
+    color: #222455;
+    background-color: white;
+}
+.estrella ion-icon {
+    color: #FFCC00;
+}
+
+.estrellaH{
+    color: #222455;
+    background-color: white;
+    font-size: 0.8em;
+    margin-left: 1em;
+    float: right;
+}
+
+.estrellaR{
+    color: #222455;
+    background-color: rgba(86,99,255, 0.05);
+    font-size: 0.8em;
+    margin-left: 1em;
+    float: right;
+}
+.estrellaR ion-icon {
+    color: #FFCC00;
+}
+
+#calificar{
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    z-index: 100;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.7em;
+    background-color: #5663ff;
+    color: white;
+    font-size: 1.3em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+#finalizar{
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    z-index: 100;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.7em;
+    background-color: #06D6A0;
+    color: white;
+    font-size: 1.3em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}

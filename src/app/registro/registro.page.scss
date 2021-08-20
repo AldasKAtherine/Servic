@@ -1,0 +1,87 @@
+ion-content {
+    --background: none;
+    background-image: url('../../assets/fondo_inicio.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#contendorForm {
+    min-height: 100%;
+    padding: 0.5em;
+    font-size: 0.9em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 20%;
+    ;
+}
+
+ion-input {
+    color: white;
+    background-color: #495a73;
+    margin-top: 10%;
+    margin-bottom: 12%;
+    border-radius: 10px;
+    min-height: 7vh;
+}
+
+ion-textarea {
+    color: white;
+    background-color: #495a73;
+    margin-top: 10%;
+    margin-bottom: 12%;
+    border-radius: 10px;
+    min-height: 30px;
+}
+
+#contenedorBoton {
+    padding-top: 10vh;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 20vh;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9em;
+}
+
+#contLog {
+    height: 11vh;
+}
+
+p {
+    margin: 0;
+    color: white;
+    padding-top: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+#buttonVal {
+    width: 100%;
+    height: 7vh;
+    background-color: #5663ff;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 0.9em;
+}
+
+#contLog {
+    text-align: center;
+}
+
+ion-icon {
+    padding-left: 2%;
+}
+
+ion-avatar {
+    margin: auto;
+    height: 7rem;
+    width: 7rem;
+}

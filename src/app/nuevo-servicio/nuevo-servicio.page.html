@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons>
+            <ion-back-button slot="start" defaultHref="/explorar"></ion-back-button>
+            <ion-title id="tlPublicar"> Publicar Servicio</ion-title>
+            <ion-back-button text="Enviar" icon="add" *ngIf="btnEnviar; else btndis" class="btnEstilo" slot="end" id="btnEnviar" (click)="submit()">
+            </ion-back-button>
+            <ng-template #btndis>
+                <ion-button class="btnEstilo" slot="end" id="btnEnviar2">
+                    Enviar
+                </ion-button>
+            </ng-template>
+
+        </ion-buttons>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <div id="cargar" (click)="presentActionSheet()">
+        <ion-icon *ngIf='mifoto==icoFot' id="camara" name="camera-outline"></ion-icon>
+        <img *ngIf='mifoto!=icoFot' src="{{mifoto}}" alt="">
+        <p *ngIf='mifoto==icoFot'>Imagen</p>
+    </div>
+    <div id="datos">
+        <input #imageServURL type="text" [value]="urlImagen | async" name="" id="" hidden>
+        <p>Título</p>
+        <ion-input class="entradas" [(ngModel)]="datos.titulo" placeholder="Título del servicio" autocapitalize="sentences"></ion-input>
+        <p>Descripción</p>
+        <ion-textarea class="entradas" [(ngModel)]="datos.descripcion" rows="3" placeholder="Describa a detalle lo que incluye el servicio..." autocapitalize="sentences"></ion-textarea>
+        <p>Categoría</p>
+
+        <ion-select [(ngModel)]="datos.categoria.id" (ionChange)="onChange($event)" placeholder="Selecccione...">
+            <ion-select-option *ngFor="let item of items|async" value="{{item.id}}" (ionChange)="btnCategoria($event.target.id)" id={{item.id}}>{{item.nombre}}</ion-select-option>
+        </ion-select>
+
+    </div>
+
+    <div id="precio1">
+        Precio
+    </div>
+    <div id="contPre">
+        <ion-input class="entradas" [(ngModel)]="datos.precio" type="number" id=" " placeholder="Precio del servicios"></ion-input>
+        <ion-list id="contRadio">
+            <ion-radio-group [(ngModel)]="datos.tipo_cobro">
+                <ion-label class="rdEstilo">Por hora</ion-label>
+                <ion-radio value="hora"></ion-radio>
+                <ion-label class="rdEstilo">Por servicio</ion-label>
+                <ion-radio value="servicio"></ion-radio>
+            </ion-radio-group>
+        </ion-list>
+    </div>
+
+</ion-content>

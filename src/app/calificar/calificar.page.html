@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/categorias"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Calificar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="padding: '1em';" class="espacio1">
+   <app-calificacion (callback)="callback($event)"></app-calificacion>
+  </div>
+  <p style="padding-bottom: 10vw;">Califique su experiencia</p>
+  <div class="div1">
+    <ion-textarea (ionChange)="textoCambio($event)" auto-grow="true" maxlength="140" placeholder="Escriba un comentario..."></ion-textarea>
+  </div>
+
+
+  <div (click)="enviarCalificacion()" id="contratar">
+    Enviar Reseña
+  </div>
+</ion-content>

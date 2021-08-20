@@ -1,0 +1,115 @@
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    --color: #FFFFFF !important;
+    --font-weight: bold;
+}
+
+.show-background{
+    --background: #FFFFFF;
+    --ion-color-base: #FFFFFF !important;
+    --color: #222455 !important;
+    --font-weight: bold;
+    --border-bottom: 2px solid rgba(0,0,0,0.4) !important
+}
+.cat{
+    margin-top: 200px;
+    margin-left: 1em;
+}
+.estrella{
+    margin-top: 200px;
+    margin-left: 2em;
+    color: #222455;
+    background-color: white;
+}
+.estrella ion-icon {
+    color: #FFCC00;
+}
+
+.estrellaH{
+    color: #222455;
+    background-color: white;
+    font-size: 0.8em;
+    margin-left: 1em;
+    float: right;
+}
+
+.estrellaR{
+    color: #222455;
+    background-color: rgba(86,99,255, 0.05);
+    font-size: 0.8em;
+    margin-left: 1em;
+    float: right;
+}
+.estrellaR ion-icon {
+    color: #FFCC00;
+}
+
+.texto{
+color: #222455;    
+}
+.estrellaH ion-icon {
+    color: #FFCC00;
+}
+
+ion-toolbar .estrellaH{
+    opacity: 0;
+}
+.show-background  .estrellaH{
+    opacity: 1;
+}
+
+.precio{
+    background-color: white;
+    font-size: 1.1em;
+    color: #4CD964;
+}
+.bold{
+    font-weight: bold;
+}
+
+
+.foto{
+    background-image: linear-gradient(rgba(34, 36, 85, 0.4), rgba(34, 36, 85, 0.4));
+    background-size: cover !important;
+    height: 250px;
+}
+
+#con_pro{
+    height: 0.5em;
+    border-radius: 2em;
+    border: none;
+    margin: 1em 0em;
+}
+
+.item-inner{
+    border: none !important;
+}
+
+ion-label{
+    --border:none;
+}
+
+#contratar{
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    z-index: 100;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.7em;
+    background-color: #5663ff;
+    color: white;
+    font-size: 1.3em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+#contratar button{
+    border-top: 1em !important;
+}
+
+.favorito{
+    color: rgb(255, 86, 115) !important;
+}

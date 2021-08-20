@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/explorar"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center;">
+
+  <h2><strong>¡Felicidades!<br>Contrato</strong></h2>
+
+  <h2>{{nombreServicio}}</h2>
+  <br>
+  <ion-avatar style="display: inline-block;width: 40vw;height: 40vw;">
+    <img  [src]="usuarioFoto">
+  </ion-avatar>
+  <h3><strong>{{nombreUsuario}}</strong></h3>
+
+  <div style="width: 90%;height: 2px; background-color: silver; opacity: 0.5; margin-left: 5%; margin-top: 2em;"></div>
+
+  <p style="opacity: 0.7;">Ponte en contacto con {{nombreUsuario}} para coordinar la ejecucion del servicio</p>
+
+  <a href="https://api.whatsapp.com/send?phone={{telefono}}">
+    <ion-button  style="width: 90%; margin-left: 5%; " expand="block"><ion-icon style="margin-right: 0.6em;" name="logo-whatsapp"></ion-icon>Contactar</ion-button>
+  </a>
+
+  <ion-button [routerLink]="['/contratacion', idContratacion]"  style="margin-top: 1em;" color="light">Ver contratación</ion-button>
+
+</ion-content>

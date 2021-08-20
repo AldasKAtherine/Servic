@@ -1,0 +1,74 @@
+
+
+<ion-header>
+    <ion-toolbar [routerLink]="['/buscar', searchParameters.aroundLatLng]">
+      <ion-searchbar placeholder="Buscar">
+      </ion-searchbar>
+      <ion-icon  id="icono_filtrar" name="filter"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ais-instantsearch [config]="configExplorar">
+    <ais-configure [searchParameters]="searchParameters"></ais-configure>
+    <ais-hits>
+      <ng-template let-hits="hits">
+        <div class="padin">
+          <span class="cerca">Populares cerca de ti</span>
+          <ais-stats class="contenedor_cantidad">
+            <ng-template let-state="state">
+              <span class="cantidad">
+                Total ({{state.nbHits}})
+              </span>
+            </ng-template>
+          </ais-stats>
+        </div>
+        <ion-slides effect="cube" slidesOffsetBefore="20" pager="false">
+          <ion-slide *ngFor="let hit of hits.slice(0,3);">
+            <app-tarjeta-servicio [servicio]="hit" [routerLink]="['/servicio', hit.objectID]"></app-tarjeta-servicio>
+          </ion-slide>
+        </ion-slides>
+        <div class="padin">
+          <span class="cerca">Categorias</span>
+          <ais-stats class="contenedor_cantidad">
+            <ng-template  let-state="state">
+              <span [routerLink]="['/categorias']"  class="cantidad">
+                Ver todos(9)
+              </span>
+            </ng-template>
+          </ais-stats>
+        </div>
+        <ion-slides>
+          <ion-slide class="iom">
+            <ion-card *ngFor="let categoria of categorias | async;" [style.background-color]="categoria.color" [routerLink]="['/categoria', categoria.id]">
+              <span>
+                <img [src]="categoria.imagen">
+                <div class="centrado">{{categoria.nombre}}</div>
+              </span>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+
+        <div class="padin">
+          <span class="cerca">Más cerca de ti</span>
+          <ais-stats class="contenedor_cantidad">
+            <ng-template let-state="state">
+              <span class="cantidad">
+                Total ({{state.nbHits}})
+              </span>
+            </ng-template>
+          </ais-stats>
+        </div>
+
+
+        <ion-row>
+          <ion-col *ngFor="let hit of hits" size="6">
+            <app-tarjeta-servicio [routerLink]="['/servicio', hit.objectID]" [mostrarCategoria]="false" [servicio]="hit"></app-tarjeta-servicio>
+          </ion-col>
+        </ion-row>
+
+      </ng-template>
+    </ais-hits>
+  </ais-instantsearch>
+</ion-content>

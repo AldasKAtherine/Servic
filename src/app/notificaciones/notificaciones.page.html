@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="noti1">
+      <ion-label>usted contrato </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="noti2">
+      <ion-label>le contrataron</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div *ngIf="pestana_activa=='noti1';else elseBlock">
+    <div *ngFor="let notificacionP of servicios_requeridos |async" class="notificacion">
+      <div class="imga">
+        <img  class="imgEstilo" src="{{notificacionP.usuario_contratado.imagen_perfil}}"/>
+      </div>
+      <div class="info">
+        <h6>{{notificacionP.usuario_contratado.nombre}}</h6>
+        <p>usted contrato {{notificacionP.nombre_servicio}}</p> 
+        <p>{{notificacionP.fecha_contacto.toDate()| amLocale:'es' | amDateFormat:'Do MMMM YYYY, h:mm a'}} </p>
+      </div>
+      <div class="btn">
+        <ion-button [routerLink]="['/contratacion', notificacionP.eventId]" class="btnEstilo"><a >Contactar</a></ion-button>
+      </div>
+    </div>
+    <div style="margin-top: 4em;">
+      <div style="text-align: center;" *ngIf="(servicios_requeridos |async)?.length == 0">
+        <img style="width: 30%;" src="./assets/caja-vacia.png" alt="" srcset="">
+        <p>
+          <strong>Sin contratos</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <div *ngFor="let notificacionP of contratos_serOfer | async" class="notificacion">
+      <div class="imga">
+        <img  class="imgEstilo" src="{{notificacionP.usuario_contrata.imagen_perfil}}"/>
+      </div>
+      <div class="info">
+        <h6>{{notificacionP.usuario_contrata.nombre}}</h6>
+        <p>solicita {{notificacionP.nombre_servicio}}</p> 
+        <p>{{notificacionP.fecha_contacto.toDate() | amLocale:'es' | amDateFormat:'Do MMMM  YYYY, h:mm a'}} </p>
+      </div>
+      <div class="btn">
+        <ion-button [routerLink]="['/contratacion', notificacionP.eventId]"  class="btnEstilo"><a >Contactar</a></ion-button>
+      </div>
+    </div>
+    <div style="margin-top: 4em;">
+      <div style="text-align: center;" *ngIf="(contratos_serOfer | async)?.length == 0">
+        <img style="width: 30%;" src="./assets/caja-vacia.png" alt="" srcset="">
+        <p>
+          <strong>Sin contrataciones</strong>
+        </p>
+      </div>
+    </div>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/categorias"></ion-back-button>
+        </ion-buttons>
+        <ion-title> {{ (item | async)?.nombre}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+    <ion-list>
+        <ion-item *ngFor="let hit of items|async">
+            <!-- 
+            <ion-card>
+                <ion-badge class="precio">${{item.precio}}/{{item.tipo_cobro}}</ion-badge>
+                <ion-badge class="estrella">
+                    <ion-icon name="star"></ion-icon> {{item.calificacion}}
+                </ion-badge>
+                <img src="{{item.imagen}}" />
+                <ion-card-header>
+                    <div>
+                        <ion-card-title class="una_linea">{{item.titulo}}</ion-card-title>
+                        <ion-badge class="categoria">{{item.categoria.nombre}}</ion-badge>
+                    </div>
+
+                    <ion-card-subtitle class="una_linea">{{item.descripcion}}</ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>-->
+            <app-tarjeta-servicio [servicio]="hit" [routerLink]="['/servicio', hit.id]"></app-tarjeta-servicio>
+
+        </ion-item>
+    </ion-list>
+</ion-content>

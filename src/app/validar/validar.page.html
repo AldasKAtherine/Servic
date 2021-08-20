@@ -1,0 +1,15 @@
+
+  <ion-content>
+      <img id="img1" src='../../assets/validarImg1.png'/>
+      <div id="contInput">
+        <ion-input id="inputVal" placeholder="# Ingrese el número de validación" [(ngModel)]="codigo"></ion-input>
+      </div>
+      <div id="contBoton"> 
+        <app-boton id="botonR" [routerLink]="['/registro']" size="large" texto="Validar" (click)="verificarCodigo(codigo)"></app-boton>
+      </div>
+      <div id="contLog">
+        <p>Ya tienes una cuenta? <a href="#">Login</a> </p>
+      </div>
+    </ion-content>
+
+

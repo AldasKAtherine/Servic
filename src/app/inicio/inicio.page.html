@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border" no-border>
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content style="text-align: center;">
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide class="slide" id="slide1">
+      <div class="content">
+        <div class="contenido_slide">
+          <p>Contrata y ofrece</p>
+          <p>servicios cerca de ti</p>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide class="slide" id="slide2">
+      <div class="content">
+        <div class="contenido_slide">
+          <p>Seguridad y confianza</p>
+          <p>accede a servicios</p>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide class="slide" id="slide3">
+      <div class="content">
+        <div class="contenido_slide">
+          <p>Transacciones seguras</p>
+          <p>entre personas</p>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div id="menu">
+    <p style="text-align: center;">
+      <app-boton [routerLink]="['/ingresar-telefono']" texto="Crear una cuenta"></app-boton>
+    </p>
+    <ion-button [routerLink]="['/ingresar-telefono']" color="transparent" id="boton-iniciar" >Iniciar Sesion</ion-button>
+  </div>
+
+  <div id="logo_con">
+    <img src="./assets/logo.png" alt="" srcset="">
+  </div>
+</ion-content>

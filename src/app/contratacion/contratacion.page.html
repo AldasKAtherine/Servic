@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/explorar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{(contrantacion | async)?.nombre_servicio}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div [ngStyle]="{ 
+    background: 'linear-gradient(rgba(34, 36, 85, 0.4), rgba(34, 36, 85, 0.4)), 
+    url('+ (servicio | async)?.imagen + ')' ,
+    'background-size': 'cover'
+  }" class="foto margin">
+    <ion-badge class="cat" [ngStyle]="{
+      'background-color': (servicio | async)?.categoria.color
+    }">{{(servicio | async)?.categoria.nombre}}</ion-badge>
+    <ion-badge class="estrella">
+      <ion-icon name="star"></ion-icon> {{(servicio | async)?.calificacion}}
+    </ion-badge>
+  </div>
+
+
+  <div *ngIf="(contrantacion | async)?.usuario_contrata.id == idUsuarioActual; else usuarioContrata">
+
+    <strong class="padding">Ofertante</strong>
+
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img *ngIf="(contrantacion | async) != null; else fotoD"
+          [src]="(contrantacion | async)?.usuario_contratado.imagen_perfil">
+        <ng-template #fotoD>
+          <img
+            src="https://st.depositphotos.com/1757583/3034/i/450/depositphotos_30349377-stock-photo-black-background.jpg"
+            alt="" srcset="">
+        </ng-template>
+      </ion-avatar>
+      <ion-label>
+        <p class="bold texto">
+          {{(contrantacion | async)?.usuario_contratado.nombre}}
+        </p>
+        <p class="texto">{{(contrantacion | async)?.usuario_contratado.biografia}}</p>
+      </ion-label>
+
+    </ion-item>
+    <a *ngIf="!(contrantacion | async)?.fecha_fin"
+      href="https://api.whatsapp.com/send?phone={{(contrantacion | async)?.usuario_contratado.numero_telefono}}">
+      <ion-button style="width: 90%; margin-left: 5%; " expand="block">
+        <ion-icon style="margin-right: 0.6em;" name="logo-whatsapp"></ion-icon>Contactar
+      </ion-button>
+    </a>
+  </div>
+
+  <ng-template #usuarioContrata>
+    <strong>Solicitante</strong>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img *ngIf="(contrantacion | async) != null; else fotoD"
+          [src]="(contrantacion | async)?.usuario_contrata.imagen_perfil">
+        <ng-template #fotoD>
+          <img
+            src="https://st.depositphotos.com/1757583/3034/i/450/depositphotos_30349377-stock-photo-black-background.jpg"
+            alt="" srcset="">
+        </ng-template>
+      </ion-avatar>
+      <ion-label>
+        <p class="bold texto">
+          {{(contrantacion | async)?.usuario_contrata.nombre}}
+        </p>
+        <p class="texto">{{(contrantacion | async)?.usuario_contrata.biografia}}</p>
+      </ion-label>
+    </ion-item>
+    <a *ngIf="!(contrantacion | async)?.fecha_fin"
+      href="https://api.whatsapp.com/send?phone={{(contrantacion | async)?.usuario_contratado.numero_telefono}}">
+      <ion-button style="width: 90%; margin-left: 5%; " expand="block">
+        <ion-icon style="margin-right: 0.6em;" name="logo-whatsapp"></ion-icon>Contactar
+      </ion-button>
+    </a>
+  </ng-template>
+
+
+
+  <div style="margin-top: 1em">
+    <strong class="margin">Fecha contrantacion</strong>
+    <p class="margin">
+      {{(contrantacion | async)?.fecha_contacto.toDate() | amLocale:'es' | amDateFormat:'Do MMMM  YYYY, h:mm a'}} </p>
+  </div>
+
+  <div *ngIf="(contrantacion | async)?.fecha_fin" style="margin-top: 1em">
+    <strong class="margin">Fecha Finalizacion</strong>
+    <p class="margin">
+      {{(contrantacion | async)?.fecha_fin.toDate() | amLocale:'es' | amDateFormat:'Do MMMM  YYYY, h:mm a'}} </p>
+  </div>
+
+  <div style="margin-top: 1em; margin-bottom: 1em;">
+    <strong class="margin">Estado</strong>
+    <ion-badge [ngStyle]="{
+    'background-color': (contrantacion | async)?.cancelada ? '#EF476F' : (contrantacion | async)?.fecha_fin ? '#06D6A0' : '#522B29'
+  }">{{(contrantacion | async)?.cancelada ? 'Cancelada' : (contrantacion | async)?.fecha_fin ? 'Finalizada' : 'En proceso'}}
+    </ion-badge>
+  </div>
+
+
+
+
+  <div style="text-align: center;" *ngIf="(contrantacion | async)?.usuario_contratado.id == idUsuarioActual && !(contrantacion | async)?.fecha_fin">
+
+    <strong style=" opacity:0.5" (click)="cancelarContrato()">Cancelar Servicio</strong>
+
+    <div (click)="marcarFinalizada()" id="finalizar">
+      Marcar Finalizada
+    </div>
+
+  </div>
+
+
+  <div *ngIf="(servicio | async)?.calificacion" style="margin-top: 1em;">
+    <strong class="margin">Calificación</strong>
+    <ion-icon name="star"></ion-icon> {{(servicio | async)?.calificacion}}
+  </div>
+
+  <div *ngIf="(servicio | async)?.comentario" style="margin-top: 1em;">
+    <strong class="margin">Comentario</strong>
+    <br>
+    {{(servicio | async)?.comentario}}
+  </div>
+
+  <div  *ngIf="(contrantacion | async)?.fecha_fin && (contrantacion | async)?.calificacion == null && (contrantacion | async)?.usuario_contrata.id == idUsuarioActual && !(contrantacion | async)?.cancelada" [routerLink]="['/calificar', idContratacion]"  id="calificar">
+    Calificar
+  </div>
+
+
+  <div style="height: 150px;"></div>
+
+
+
+
+
+
+
+
+</ion-content>

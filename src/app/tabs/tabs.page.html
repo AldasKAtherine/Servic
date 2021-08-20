@@ -1,0 +1,29 @@
+<ion-tabs (ionTabsDidChange)="hola()" #myTabs>
+  <ion-fab [routerLink]="['/nuevo-servicio']" vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-tab-bar  slot="bottom">
+    <ion-tab-button tab="explorar">
+      <ion-icon [name]="selectedTab == 'explorar' ?  'home' : 'home-outline'" ></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="favoritos">
+      <ion-icon [name]="selectedTab == 'favoritos' ?  'bookmarks' : 'bookmarks-outline'"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="">
+      
+    </ion-tab-button>
+
+    <ion-tab-button tab="notificaciones">
+      <ion-icon [name]="selectedTab == 'notificaciones' ?  'notifications' : 'notifications-outline'"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="perfil">
+      <ion-icon [name]="selectedTab == 'perfil' ?  'person' : 'person-outline'" ></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

@@ -1,0 +1,59 @@
+<ais-instantsearch [config]="config">
+  <ais-configure [searchParameters]="searchParameters"></ais-configure>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/explorar"></ion-back-button>
+      </ion-buttons>
+      <ais-search-box placeholder="Buscar..." submitTitle="Enviar" [autofocus]="true"></ais-search-box>
+      <ion-buttons slot="secondary">
+        <ion-button (click)="toogleFiltrar()">
+          <ion-icon name="filter"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content style="height: 100vh;">
+
+    <div id="filtros" *ngIf="existeFiltros" [ngClass]="{'ocultar': !showingFilters}" style="padding: 0.7em;">
+
+      <h4 id="fil"><strong>Filtros</strong></h4>
+
+      <h4><strong>Categoria</strong></h4>
+
+      <ais-menu [limit]="9" attribute="categoria.nombre"></ais-menu>
+      <h4><strong>Calificación</strong></h4>
+      <ais-rating-menu attribute="calificacion" [max]="5" andUpLabel="& Superior"></ais-rating-menu>
+      <h4><strong>Distancia maxima: <span class="distancia">{{searchParameters.aroundRadius/1000}}km</span></strong>
+      </h4>
+      <ion-range (ionChange)="cambiarDistancia($event)" [value]="searchParameters.aroundRadius/1000" pin min="2"
+        max="20" color="primary">
+        <ion-label slot="start">2km</ion-label>
+        <ion-label slot="end">20km</ion-label>
+      </ion-range>
+      <ais-current-refinements></ais-current-refinements>
+
+      <div style="height: 200px;"></div>
+
+    </div>
+    <ais-infinite-hits *ngIf="!showingFilters">
+      <ng-template let-hits="hits">
+        <ion-row>
+          <ion-col *ngFor="let hit of hits" size="6">
+            <app-tarjeta-servicio [routerLink]="['/servicio', hit.objectID]" [mostrarCategoria]="false"
+              [servicio]="hit"></app-tarjeta-servicio>
+          </ion-col>
+        </ion-row>
+      </ng-template>
+    </ais-infinite-hits>
+
+
+  </ion-content>
+
+  <div *ngIf="showingFilters" id="contratar">
+    <p class="limpiar" (click)="limpiar()">Limpiar</p>
+    <div class="vl"></div>
+    <p class="aplicar" (click)="aplicar()">Aplicar</p>
+  </div>
+
+</ais-instantsearch>

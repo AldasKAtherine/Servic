@@ -1,0 +1,29 @@
+<ion-content>
+    <div id="contenedor">
+
+
+        <div id="contendorForm">
+            <!--Camara-->
+            <input #imageServURL type="text" [value]="urlImagen | async" name="" id="" hidden>
+            <ion-avatar (click)="presentActionSheet()"><img src="{{myphoto}}"></ion-avatar>
+            <!--Datos-->
+            <ion-input id="nombre" required placeholder="Nombre y Apellido" type="text" autocapitalize="words" [(ngModel)]="NombreApellido">
+                <ion-icon name="person-outline"></ion-icon>
+            </ion-input>
+            <ion-input id="inputVal" placeholder="Correo" type="email" [(ngModel)]="Email">
+                <ion-icon name="mail-outline"></ion-icon>
+            </ion-input>
+            <ion-textarea id="inputVal" placeholder="Biografía (opcional)" [(ngModel)]="Resena">
+
+            </ion-textarea>
+
+        </div>
+        <p style="text-align: center;">
+            <app-boton  texto="Registrar" (click)="crearUsua()"></app-boton>
+        </p>
+        <div id="contLog">
+            <p>Ya tienes una cuenta? <a>Login</a> </p>
+        </div>
+
+    </div>
+</ion-content>

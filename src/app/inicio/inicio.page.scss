@@ -1,0 +1,119 @@
+.slide{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+#slide1{
+    background-image: url('/assets/slide1.png');
+}
+#slide3{
+    background-image: url('/assets/slide2.jpg');
+}
+
+#slide2{
+    background-image: url('/assets/slide3.jpg');
+}
+
+
+.slide .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,.41),#111111 75%,rgba(0,0,0,1));
+    color: white;
+    padding: 10px;
+}
+
+.content{
+   vertical-align: bottom; 
+}
+
+#logo_con{
+    position: fixed;
+    top: 3.5em;
+    width: 100%;
+    z-index: 100;
+}
+
+#logo_con img{
+    width: 30%;
+    max-width: 8em;
+}
+
+#menu{
+    position: fixed;
+    bottom: 2em;
+    width: 100%;
+    z-index: 100;
+}
+ion-header{
+    position: absolute;
+}
+
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
+
+.toolbar-background {
+    border: none;
+}
+
+.header-md::after {
+    display: none;
+}
+
+#boton-explorar{
+    border: 2px solid white;
+    --color: white !important;
+    border-radius: 0.5em;
+}
+
+.swiper-pagination {
+    --margin-bottom: 10em;
+}
+
+.button-solid{
+    width: 90%;
+    margin: auto;
+    --width: 60px;
+    --height: 60px;
+    --border-radius: 0.6em;
+    --background-color: #5663FF;
+}
+@media (min-width:413px)  {  
+   #boton-empezar{
+       width: 50%;
+       margin: auto;
+   }
+}
+
+.swiper-pagination {
+    margin-bottom: 13em !important;
+}
+
+.contenido_slide{
+    position: absolute;
+    left: 50%;
+    bottom: 10em;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+
+}
+.swiper-pagination {
+    bottom: 50px !important;    
+}
+.header-ios ion-toolbar:last-of-type{
+    --border-bottom: none;
+}
+.button-inner{
+    color: white !important;
+}
+
+.swiper-pagination-bullets {
+    position: fixed !important;
+    bottom: 100px !important;
+    padding-bottom: 100px !important;
+}
